@@ -3,6 +3,8 @@ C:\Users\salinda yasas\Desktop\microservices-new\order-service\src\main\java\com
 C:\Users\salinda yasas\Desktop\microservices-new\order-service\src\main\java\com\programmingtechie\orderservice\dto\OrderRequest.java
 C:\Users\salinda yasas\Desktop\microservices-new\order-service\src\main\java\com\programmingtechie\orderservice\controller\OrderController.java
 C:\Users\salinda yasas\Desktop\microservices-new\order-service\src\main\java\com\programmingtechie\orderservice\dto\OrderLineItemsDto.java
+C:\Users\salinda yasas\Desktop\microservices-new\order-service\src\main\java\com\programmingtechie\orderservice\dto\InventoryResponse.java
 C:\Users\salinda yasas\Desktop\microservices-new\order-service\src\main\java\com\programmingtechie\orderservice\repository\OrderRepository.java
+C:\Users\salinda yasas\Desktop\microservices-new\order-service\src\main\java\com\programmingtechie\orderservice\config\WebClientConfig.java
 C:\Users\salinda yasas\Desktop\microservices-new\order-service\src\main\java\com\programmingtechie\orderservice\service\OrderService.java
 C:\Users\salinda yasas\Desktop\microservices-new\order-service\src\main\java\com\programmingtechie\orderservice\model\OrderLineItems.java

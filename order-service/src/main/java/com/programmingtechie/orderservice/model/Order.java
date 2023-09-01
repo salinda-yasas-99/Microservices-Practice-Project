@@ -1,6 +1,5 @@
 package com.programmingtechie.orderservice.model;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,7 +9,7 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name= "t_orders")
+@Table(name = "t_orders")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -22,7 +21,4 @@ public class Order {
     private String orderNumber;
     @OneToMany(cascade = CascadeType.ALL)
     private List<OrderLineItems> orderLineItemsList;
-
-
-
 }

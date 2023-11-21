@@ -1,7 +1,10 @@
 package com.programmingtechie.inventoryservice.controller;
 
 
-import com.programmingtechie.inventoryservice.dto.InventoryResponse;
+import com.programmingtechie.inventoryservice.dto.ProductCreateDTO;
+import com.programmingtechie.inventoryservice.dto.ProductResponseDTO;
+import com.programmingtechie.inventoryservice.dto.ProductUpdateDTO;
+import com.programmingtechie.inventoryservice.model.Inventory;
 import com.programmingtechie.inventoryservice.service.InventoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,13 +20,33 @@ public class InventoryController {
     private final InventoryService inventoryService;
 
 
-    // http://localhost:8082/api/inventory/iphone-13
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Inventory addNewProduct(@RequestBody ProductCreateDTO productCreateDTO){
+        return inventoryService.addNewProduct(productCreateDTO);
+    }
 
-    // http://localhost:8082/api/inventory/sku-code=iphone-13
+    @GetMapping("/{productName}")
+    @ResponseStatus(HttpStatus.OK)
+    public ProductResponseDTO getProductDetailsByName(@PathVariable String productName){
+        return inventoryService.getProductDetailsByName(productName);
+    }
+
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<InventoryResponse> instock(@RequestParam List<String> skuCode){
-        return inventoryService.isInStock(skuCode);
+    public List<ProductResponseDTO> getAllProducts(){
+        return inventoryService.getAllProducts();
+    }
 
+    @PutMapping("/{productName}")
+    @ResponseStatus(HttpStatus.OK)
+    public ProductResponseDTO updateProductByName(@PathVariable String productName,@RequestBody ProductUpdateDTO productUpdateDTO){
+        return inventoryService.updateProductByName(productName, productUpdateDTO);
+    }
+
+    @DeleteMapping("/{productName}")
+    @ResponseStatus(HttpStatus.OK)
+    public String deleteProductByName(@PathVariable String productName){
+        return inventoryService.deleteProductByName(productName);
     }
 }

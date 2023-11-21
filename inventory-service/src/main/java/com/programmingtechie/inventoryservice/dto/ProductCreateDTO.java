@@ -5,14 +5,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
 @Data
-@NoArgsConstructor
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class ProductCreateDTO {
 
-public class InventoryResponse {
-    private String skuCode;
-    private boolean isInStock;
-
-
+    private String productName;
+    private Integer quantity;
 }
